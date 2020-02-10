@@ -39,7 +39,7 @@ export default class Content {
             res.write(`${attacks[index]}\n`);
         }
         var boxName: [number, string] = [1, "Reserve"];
-        res.write(`Box number: ${boxName[0]} Box name: ${boxName[1]}`);
+        res.write(`Box number: ${boxName[0]} Box name: ${boxName[1]}\n`);
         enum Types {
             Fire = "Fire",
             Grass = "Grass",
@@ -48,7 +48,7 @@ export default class Content {
             Flying = "Flying"
         }
         var types: [Types, Types] = [Types.Fire, Types.Flying];
-        res.write(`Main type: ${types[0]} Sub type: ${types[1]}`);
+        res.write(`Main type: ${types[0]} Sub type: ${types[1]}\n`);
         var height: string | number;
         height = "5'07";
         res.write(`Height in inches: ${height}\n`);
