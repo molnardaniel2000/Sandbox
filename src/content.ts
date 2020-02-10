@@ -29,14 +29,44 @@ export default class Content {
         res.write("</head>");
         res.write("<body><form><pre>");
 
-        var age: number = 32;
-        var name: string = "John";
-        var isUpdated: boolean = true;
-        let próba: string = "Alma";
-        const proba2: string = "Alma";
-
-        res.write(`${age} ${name} ${isUpdated}`);
-
+        var nationalDexNumber: number = 6;
+        var species: string = "Charizard";
+        var fainted: boolean = false;
+        var attacks: string[] = ["Air Slash", "Dragon Claw", "Flamethrower", "Inferno"];
+        res.write(`National dex number: ${nationalDexNumber} \nSpecies: ${species} \nFainted: ${fainted}`);
+        res.write("\nAttacks:\n");
+        for (let index = 0; index < attacks.length; index++) {
+            res.write(`${attacks[index]}\n`);
+        }
+        var boxName: [number, string] = [1, "Reserve"];
+        res.write(`Box number: ${boxName[0]} Box name: ${boxName[1]}`);
+        enum Types {
+            Fire = "Fire",
+            Grass = "Grass",
+            Water = "Water",
+            Electric = "Electric",
+            Flying = "Flying"
+        }
+        var types: [Types, Types] = [Types.Fire, Types.Flying];
+        res.write(`Main type: ${types[0]} Sub type: ${types[1]}`);
+        var height: string | number;
+        height = "5'07";
+        res.write(`Height in inches: ${height}\n`);
+        height = 1.7;
+        res.write(`Height in meters: ${height}\n`);
+        var something: any;
+        something = "Something";
+        res.write(`${something} \n`);
+        something = 151;
+        res.write(`${something} \n`);
+        something = true;
+        res.write(`${something} \n`);
+        function writeHelloWord(): void {
+            res.write("Hello World!\n");
+        }
+        writeHelloWord();
+        writeHelloWord();
+        writeHelloWord();
         res.write("</pre></form></body></html>");
         res.end();
     }
